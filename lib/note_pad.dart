@@ -42,16 +42,31 @@ class _NotePadState extends State<NotePad> {
         }, 
         child: Text("Save"))],
       ),
-      body: TextField(
-        onChanged: (String val) {
-          setState(() {
-            _text = val;
-          });
-        },
-        controller: _controller,
-        keyboardType: TextInputType.multiline,
-        maxLines: null,
+      body: Container(
         
+        width: double.infinity,
+        
+        color: Colors.green,
+        
+        child: TextField(
+          style: TextStyle(fontSize: 25.0, height: 2.0, color: Colors.black),
+          textAlign: TextAlign.start,
+          decoration: InputDecoration(
+            
+            
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.all(50.0)
+          ),
+          onChanged: (String val) {
+            setState(() {
+              _text = val;
+            });
+          },
+          controller: _controller,
+          keyboardType: TextInputType.multiline,
+          maxLines: null,
+          
+        ),
       ),
 
     );
